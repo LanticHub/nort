@@ -47,7 +47,7 @@ clonerepo() { #TODO: add error detection
 }
 
 compile() {
-	cd northern #TODO: squash relative path
+	cd Northern #TODO: squash relative path
 	message "Preparing to build..."
 	./autogen.sh
 	if [ $? -ne 0 ]; then error; fi
