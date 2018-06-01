@@ -86,14 +86,14 @@ createconf() {
 	message "wait 10 seconds for deamon to stop..."
         sleep 10s
 	sudo rm $CONFILE
-	message "Updating chaincoin.conf..."
+	message "Updating northern.conf..."
         printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "listen=1" "server=1" "daemon=1" "maxconnections=256" "rpcport=9332" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:6942" "addnode=207.246.69.246"> $CONFILE
 
 }
 
 success() {
 	northernd
-	message "SUCCESS! Your chaincoind has started. Masternode.conf setting below..."
+	message "SUCCESS! Your northernd has started. Masternode.conf setting below..."
 	message "MN $mnip:6942 $MNPRIVKEY TXHASH INDEX"
 	exit 0
 }
