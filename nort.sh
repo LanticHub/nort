@@ -77,7 +77,7 @@ createconf() {
         chaincoind
         message "Wait 10 seconds for daemon to load..."
         sleep 20s
-        MNPRIVKEY=$(chaincoin-cli masternode genkey)
+        MNPRIVKEY=$(northern-cli masternode genkey)
 	chaincoin-cli stop
 	message "wait 10 seconds for deamon to stop..."
         sleep 10s
