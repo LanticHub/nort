@@ -18,7 +18,7 @@ error() {
 }
 
 
-prepdependencies() { #TODO: add error detection
+prepdependencies() {
 	message "Installing dependencies..."
 	sudo apt-get update
 	sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
@@ -27,7 +27,7 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 }
 
-createswap() { #TODO: add error detection
+createswap() {
 	message "Creating 2GB temporary swap file...this may take a few minutes..."
 	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
 	sudo mkswap /swapfile
@@ -39,14 +39,14 @@ createswap() { #TODO: add error detection
 	sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
 }
 
-clonerepo() { #TODO: add error detection
+clonerepo() {
 	message "Cloning from github repository..."
   	cd ~/
 	git clone https://github.com/zabtc/Northern.git
 }
 
 compile() {
-	cd Northern #TODO: squash relative path
+	cd Northern
 	message "Preparing to build..."
 	./autogen.sh
 	if [ $? -ne 0 ]; then error; fi
@@ -62,9 +62,6 @@ compile() {
 }
 
 createconf() {
-	#TODO: Can check for flag and skip this
-	#TODO: Random generate the user and password
-
 	message "Creating northern.conf..."
 	MNPRIVKEY="6FBUPijSGWWDrhbVPDBEoRuJ67WjLDpTEiY1h4wAvexVZH3HnV6"
 	CONFDIR=~/.northern
