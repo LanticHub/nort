@@ -21,7 +21,6 @@ error() {
 prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."
 	sudo apt-get update
-	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 	sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update
