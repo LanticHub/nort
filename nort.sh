@@ -95,8 +95,8 @@ success() {
 }
 
 install() {
-	prepdependencies
-	createswap
+#	prepdependencies
+#	createswap
 	clonerepo
 	compile $1
 	createconf
