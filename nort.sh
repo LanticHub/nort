@@ -63,7 +63,7 @@ compile() {
 
 createconf() {
 	message "Creating northern.conf..."
-	MNPRIVKEY="6FBUPijSGWWDrhbVPDBEoRuJ67WjLDpTEiY1h4wAvexVZH3HnV6"
+	MNPRIVKEY="2aJdbYXcR3PbFgAX15778yoyb88PoAqaN2XAZWPFdcUNKsEHAs6"
 	CONFDIR=~/.northern
 	CONFILE=$CONFDIR/northern.conf
 	if [ ! -d "$CONFDIR" ]; then mkdir $CONFDIR; fi
