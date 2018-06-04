@@ -74,11 +74,11 @@ createconf() {
 	rpcpass=$(openssl rand -base64 32)
 	printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "listen=1" "server=1" "daemon=1" "maxconnections=256" "rpcport=9332" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:6942" > $CONFILE
 
-        chaincoind
+        northernd
         message "Wait 10 seconds for daemon to load..."
         sleep 20s
         MNPRIVKEY=$(northern-cli masternode genkey)
-	chaincoin-cli stop
+	northern-cli stop
 	message "wait 10 seconds for deamon to stop..."
         sleep 10s
 	sudo rm $CONFILE
