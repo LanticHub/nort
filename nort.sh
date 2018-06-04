@@ -79,11 +79,11 @@ createconf() {
         sleep 20s
         MNPRIVKEY=$(northern-cli masternode genkey)
 	northern-cli stop
-	message "wait 10 seconds for deamon to stop..."
+	message "wait 10 seconds for daemon to stop..."
         sleep 10s
 	sudo rm $CONFILE
 	message "Updating northern.conf..."
-        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "listen=1" "server=1" "daemon=1" "maxconnections=256" "rpcport=9332" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:6942" "addnode=207.246.69.246"> $CONFILE
+        printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "listen=1" "server=1" "daemon=1" "maxconnections=256" "rpcport=9332" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:6942" "addnode=207.246.69.246" "addnode=209.250.233.104" "addnode=45.77.82.101" "addnode=138.68.167.127" "addnode=45.77.218.53" "addnode=207.246.86.118" "addnode=207.246.71.67" "addnode=173.199.123.21" "addnode=149.56.4.241" "addnode=149.56.4.242" "addnode=149.56.4.243" "addnode=149.56.4.244" "addnode=149.56.4.245" "addnode=149.56.4.246" "addnode=149.56.4.247"> $CONFILE
 
 }
 
